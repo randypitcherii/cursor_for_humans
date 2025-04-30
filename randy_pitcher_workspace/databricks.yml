@@ -1,0 +1,22 @@
+bundle:
+  name: randy_pitcher_workspace
+  uuid: 5783f89a-7e3e-4a15-ad1a-0b51031bc608
+
+include:
+  - databricks_assets/*.yml
+
+targets:
+  dev:
+    mode: development
+    default: true
+    workspace:
+      host: https://dbc-daae04e5-a828.cloud.databricks.com
+
+  prod:
+    mode: production
+    workspace:
+      host: https://dbc-daae04e5-a828.cloud.databricks.com
+      root_path: /Workspace/Users/randy.pitcher@databricks.com/.bundle/${bundle.name}/${bundle.target}
+    permissions:
+      - user_name: randy.pitcher@databricks.com
+        level: CAN_MANAGE

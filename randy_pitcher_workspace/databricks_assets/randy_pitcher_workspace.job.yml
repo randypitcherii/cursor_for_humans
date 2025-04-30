@@ -1,0 +1,15 @@
+# The main job for randy_pitcher_workspace.
+resources:
+  jobs:
+    randy_pitcher_workspace_job:
+      name: randy_pitcher_workspace_job
+
+      trigger:
+        periodic:
+          interval: 1
+          unit: DAYS
+
+      tasks:
+        - task_key: notebook_task
+          notebook_task:
+            notebook_path: ../src/notebook.ipynb
