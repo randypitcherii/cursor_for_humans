@@ -4,3 +4,8 @@ resources:
       name: RAndy's Cool Job - as a DAB
       queue:
         enabled: true
+
+      tasks:
+        - task_key: python_task
+          notebook_task:
+            notebook_path: ../src/notebook.ipynb
